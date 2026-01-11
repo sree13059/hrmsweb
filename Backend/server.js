@@ -40,19 +40,46 @@ app.use("/api/employeelist", require("./routes/employeeListRoutes"));
 app.use( "/api/studentdetails",require("./routes/studentDetailsReportRoutes"));
 app.use("/api/studentlistreport",require("./routes/studentListReportRoutes"));
 app.use(
+  "/api/employeelistreports",
+  require("./routes/employeeListReportRoutes")
+);
+app.use(
   "/api/employeedetailsreport",
   require("./routes/employeeDetailsReportRoutes")
 );
+app.use(
+  "/api/student-marks-policies",
+  require("./routes/studentMarksPolicyRoutes")
+);
+app.use("/api/subject-wise-marks", require("./routes/subjectWiseMarksRoutes"));
+app.use(
+  "/api/result-verification",
+  require("./routes/resultVerificationRoutes")
+);
+app.use(
+  "/api/employeelistreport",
+  require("./routes/employeeListReportRoutes")
+);
+app.use("/api/routine-slots", require("./routes/routineSlotRoutes"));
+app.use("/api/routine-entry", require("./routes/routineEntryRoutes"));
+app.use(
+  "/api/studentclassroutine",
+  require("./routes/studentClassRoutineRoutes")
+);
+app.use("/api/debit", require("./routes/debitRoutes"));
+app.use("/api/credit-heads", require("./routes/creditHeadRoutes"));
+app.use("/api/bank-deposits", require("./routes/bankDepositRoutes"));
+app.use("/api/bank-withdraws", require("./routes/bankWithdrawRoutes"));
+app.use("/api/incomes", require("./routes/incomeRoutes"));
+app.use("/api/expenses", require("./routes/expenseRoutes"));
 /* ======================
    DEFAULT ROUTE
 ====================== */
 app.get("/", (req, res) => {
   res.send("School Management Backend API is running 🚀");
 });
-app.use(
-  "/api/employeelistreport",
-  require("./routes/employeeListReportRoutes")
-);
+
+
 
 /* ======================
    ERROR HANDLING

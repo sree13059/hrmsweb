@@ -1,22 +1,27 @@
 const mongoose = require("mongoose");
 
-const EmployeeListReportSchema = new mongoose.Schema(
+const IncomeSchema = new mongoose.Schema(
   {
-    department: {
+    headCode: {
       type: String,
+      required: true,
+      trim: true
+    },
+    headName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    amount: {
+      type: Number,
       required: true
     },
-    designation: {
-      type: String,
-      required: true
-    },
-    fromDate: {
+    incomeDate: {
       type: Date,
       required: true
     },
-    toDate: {
-      type: Date,
-      required: true
+    description: {
+      type: String
     },
     entryBy: {
       type: String,
@@ -31,7 +36,4 @@ const EmployeeListReportSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model(
-  "EmployeeListReport",
-  EmployeeListReportSchema
-);
+module.exports = mongoose.model("Income", IncomeSchema);

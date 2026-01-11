@@ -3,13 +3,12 @@ const router = express.Router();
 
 const {
   createEmployeeListReport,
-  getEmployeeListReport
+  getAllEmployeeListReports,
+  deleteEmployeeListReport
 } = require("../controllers/employeeListReportController");
 
-// SAVE
 router.post("/", createEmployeeListReport);
-
-// GENERATE / FILTER
-router.get("/", getEmployeeListReport);
+router.get("/", getAllEmployeeListReports);
+router.delete("/:id", deleteEmployeeListReport);
 
 module.exports = router;

@@ -1,22 +1,31 @@
 const mongoose = require("mongoose");
 
-const EmployeeListReportSchema = new mongoose.Schema(
+const BankWithdrawSchema = new mongoose.Schema(
   {
-    department: {
+    bankName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    branchName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    withdrawAmount: {
+      type: Number,
+      required: true
+    },
+    withdrawTime: {
       type: String,
       required: true
     },
-    designation: {
-      type: String,
-      required: true
-    },
-    fromDate: {
+    withdrawDate: {
       type: Date,
       required: true
     },
-    toDate: {
-      type: Date,
-      required: true
+    description: {
+      type: String
     },
     entryBy: {
       type: String,
@@ -31,7 +40,4 @@ const EmployeeListReportSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model(
-  "EmployeeListReport",
-  EmployeeListReportSchema
-);
+module.exports = mongoose.model("BankWithdraw", BankWithdrawSchema);
